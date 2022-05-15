@@ -4,7 +4,7 @@ import useLazyLoad from "../../Reducers/useLazyLoad";
 import CardView from '../Card/Card';
 import { LoadingPosts } from './LoadingPosts';
 import posts from '../../Data/data.json';
-
+import Grid from '@mui/material/Grid';
 const NUM_PER_PAGE = 6;
 const TOTAL_PAGES = 3;
 
@@ -27,11 +27,25 @@ const Posts = () => {
     const { data, loading } = useLazyLoad({ triggerRef, onGrabData });
     return (
         <>
-            <div >
-                {data.map(image => {
-                    return <CardView owner={image["owner"]} imageUrl={image["imageUrl"]} />
-                })}
-            </div>
+            <Grid container spacing={4}
+                direction="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+                style={{ minHeight: '80vh' }}
+            >
+                {
+                    data.map(c => (
+                        <Grid item xs={3} sm={6} md={4} >
+                            <CardView owner={c["owner"]} imageUrl={c["imageUrl"]} />
+
+                        </Grid>
+                    ))
+                }
+
+            </Grid>
+
+
+
             <div ref={triggerRef} className={clsx("trigger", { visible: loading })}>
                 Loading...
             </div>
