@@ -1,34 +1,27 @@
 
 import './App.css';
-
-import Posts from "./Components/Post/Post"
+import React, { lazy, Suspense } from 'react';
+//import AvatarComponent from "./AvatarComponent";
+const renderLoader = () => <p>Loading...</p>;
+const AvatarComponent = lazy(() => import('./AvatarComponent'));
+//import Posts from "./Components/Post/Post"
+const Posts = lazy(() => import('./Components/Post/Post'));
 function App() {
+  const [visibles, setVisible] = React.useState(false)
+  const func = (val) => {
+    setVisible(!val)
+  }
   return (
-    <div className="App">
 
-      <div style={{ justifyContent: "center", alignContent: "center" }}>
-        <Posts />
-        {/* <Grid container spacing={4}
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
-          style={{ minHeight: '80vh' }}
-        >
-          {
-            data.map(c => (
-              <Grid item xs={3} sm={6} md={4} >
-                <CardView img={c.imageUrl} name={c.owner} />
-              
-              </Grid>
-            ))
-          }
-
-        </Grid> */}
-
-      </div>
+    <Suspense fallback={renderLoader()}>
+      {!visibles && <AvatarComponent func={func} />}
+      {visibles && <><Posts />
+      </>}
+      {/* <Posts /> */}
+    </Suspense>
 
 
-    </div>
+
   );
 }
 

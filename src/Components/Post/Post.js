@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import clsx from "clsx";
 import useLazyLoad from "../../Reducers/useLazyLoad";
-import CardView from '../Card/Card';
-import { LoadingPosts } from './LoadingPosts';
+//import CardView from '../Card/Card';
 import posts from '../../Data/data.json';
 import Grid from '@mui/material/Grid';
+import React, { lazy } from 'react';
+//import Posts from "./Components/Post/Post"
+const CardView = lazy(() => import('../Card/Card'));
 const NUM_PER_PAGE = 6;
 const TOTAL_PAGES = 3;
 
@@ -47,7 +49,9 @@ const Posts = () => {
 
 
             <div ref={triggerRef} className={clsx("trigger", { visible: loading })}>
-                Loading...
+                <div style={{ textAlign: "center" }}>
+                    Loading...
+                </div>
             </div>
         </>
     );
