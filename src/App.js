@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import Posts from "./Components/Post/Post"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+
+      <div style={{ justifyContent: "center", alignContent: "center" }}>
+        <Posts />
+        {/* <Grid container spacing={4}
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          style={{ minHeight: '80vh' }}
         >
-          Learn React
-        </a>
-      </header>
+          {
+            data.map(c => (
+              <Grid item xs={3} sm={6} md={4} >
+                <CardView img={c.imageUrl} name={c.owner} />
+              
+              </Grid>
+            ))
+          }
+
+        </Grid> */}
+
+      </div>
+
+
     </div>
   );
 }
+
 
 export default App;
