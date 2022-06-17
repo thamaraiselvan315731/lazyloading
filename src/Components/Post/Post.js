@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import clsx from "clsx";
 import useLazyLoad from "../../Reducers/useLazyLoad";
-//import CardView from '../Card/Card';
+import CardView from '../Card/Card';
 import posts from '../../Data/data.json';
 import Grid from '@mui/material/Grid';
+// eslint-disable-next-line
 import React, { lazy } from 'react';
 //import Posts from "./Components/Post/Post"
-const CardView = lazy(() => import('../Card/Card'));
+//const CardView = lazy(() => import('../Card/Card'));
 const NUM_PER_PAGE = 6;
 const TOTAL_PAGES = 3;
 
