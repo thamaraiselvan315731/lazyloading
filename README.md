@@ -6,6 +6,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+
+
+
+### PLease Read it 
+
+
+
+### Please click the Search icon for Search the Item. 
+### On loading the page will render and please scroll down to load the more data.
+
+
+
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
