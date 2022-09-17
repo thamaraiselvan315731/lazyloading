@@ -1,3 +1,5 @@
+// This is the main file for the Data.
+
 import { useRef } from "react";
 import clsx from "clsx";
 import useLazyLoad from "../../Reducers/useLazyLoad";
@@ -24,7 +26,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // eslint-disable-next-line
 import React, { lazy, useEffect } from 'react';
-
+//styles for the paper and the inputbase
 const useStyles = makeStyles(theme => ({
     root: {
         overflow: "hidden",
@@ -54,10 +56,11 @@ const useStyles = makeStyles(theme => ({
     },
 
 }));
+// this is for number of data load at a time and pages 
 const NUM_PER_PAGE = 18;
 const TOTAL_PAGES = 4;
 let dataFullData = [];
-
+// dummy thing to load the data from json file
 const dataLoadInitial = () => {
     const data1page = datapage1.page["content-items"].content;
     const data2page = datapage2.page["content-items"].content;
@@ -86,7 +89,7 @@ const Posts = () => {
     const [search, setSearch] = React.useState(false)
     const classes = useStyles();
     const triggerRef = useRef(null);
-
+    // search by key method
     const searchBykey = async () => {
         let dataSearch = value.trim().length > 0 ? true : false;
         if (dataSearch) {
@@ -98,6 +101,7 @@ const Posts = () => {
         await MovieServices.loadData(dispatch, value);
 
     }
+    // this is for dimension update
     const updateDimensions = () => {
         setWidth(window.innerWidth);
         setHeight(window.innerHeight);
@@ -115,6 +119,7 @@ const Posts = () => {
         setValue(event.target.value);
 
     };
+    // this ongrabdata will load depends on page number, for api/ pagination we can write the logic to append the data
     const onGrabData = (currentPage) => {
         countPage++;
 

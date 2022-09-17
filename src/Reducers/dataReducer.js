@@ -1,4 +1,4 @@
-
+// These Reducer is for set, get, update the state values.
 const initialState = {
     data: [],
     loading: true,

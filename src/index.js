@@ -9,6 +9,7 @@ import rootReducers from '../src/Reducers/index'
 const store = createStore(rootReducers)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+//Giving an provider to access the redux store to entire applications
 
 root.render(
   <Provider store={store}>

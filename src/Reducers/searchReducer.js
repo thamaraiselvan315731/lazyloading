@@ -1,3 +1,5 @@
+// This reducer for Search item to store and GET.
+
 const initialState = {
     searchItem: [],
     loading: true,

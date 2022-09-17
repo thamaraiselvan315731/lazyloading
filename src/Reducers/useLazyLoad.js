@@ -1,3 +1,6 @@
+//this is custom(useLazyLoad) reducer, debounce these plugin is for trigger an method on periodic set time later.
+//Depends on the page the data and the reducer call back the corresponding data.
+
 import { useEffect, useReducer, useCallback } from "react";
 import debounce from "lodash/debounce";
 

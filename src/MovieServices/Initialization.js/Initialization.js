@@ -1,3 +1,6 @@
+// this file is to search movies with group of data, by using includes with lowercase converstion 
+// default initial funtion also written, if its needed we cn use.
+
 import datapage1 from "../../Data/CONTENTLISTINGPAGE-PAGE1.json"
 import datapage2 from "../../Data/CONTENTLISTINGPAGE-PAGE2.json"
 import datapage3 from "../../Data/CONTENTLISTINGPAGE-PAGE3.json"

@@ -1,3 +1,5 @@
+//Its an almost like Action to trigger the method on corresponding type.
+
 import Initialization from "./Initialization.js/Initialization"
 const MovieServices = {
 

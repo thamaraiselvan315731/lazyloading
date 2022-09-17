@@ -1,3 +1,5 @@
+//This is card loader ,while the delay time is running. the card skeleton loader will give us an good feel on loading content
+
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
