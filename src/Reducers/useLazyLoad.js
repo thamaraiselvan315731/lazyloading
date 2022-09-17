@@ -57,6 +57,7 @@ const useLazyLoad = ({ triggerRef, onGrabData, options }) => {
             const data = await onGrabData(state.currentPage);
 
             dispatch({ type: "onGrabData", payload: { data } });
+
         }
 
     };

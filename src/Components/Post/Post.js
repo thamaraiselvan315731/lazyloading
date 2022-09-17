@@ -72,7 +72,7 @@ const Posts = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dataLoadInitial();
-        MovieServices.loadFullData(dispatch);
+        // MovieServices.loadFullData(dispatch);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -80,6 +80,8 @@ const Posts = () => {
     // eslint-disable-next-line
     const [height, setHeight] = React.useState(window.innerHeight);
     const moviesSearch = useSelector((state) => state.searchlist);
+    const storeDataSaved = useSelector((state) => state);
+    console.log("Redux====>" + JSON.stringify(storeDataSaved))
     const [value, setValue] = React.useState()
     const [search, setSearch] = React.useState(false)
     const classes = useStyles();
@@ -123,6 +125,10 @@ const Posts = () => {
                         ((currentPage - 1) % TOTAL_PAGES) * NUM_PER_PAGE,
                         NUM_PER_PAGE * (currentPage % TOTAL_PAGES)
                     );
+                    dispatch({
+                        type: 'GET_DATA_UPDATE',
+                        payload: data
+                    })
                     resolve(data);
                 }, 3000);
 
@@ -137,6 +143,10 @@ const Posts = () => {
                             NUM_PER_PAGE * (currentPage % TOTAL_PAGES)
                         );
                         resolve(data);
+                        dispatch({
+                            type: 'GET_DATA_UPDATE',
+                            payload: data
+                        })
                     }
                     else {
                         resolve(null);
@@ -145,7 +155,7 @@ const Posts = () => {
             })
         }
     };
-
+    // eslint-disable-next-line 
     const { data, loading } = useLazyLoad({ triggerRef, onGrabData });
 
     return (
@@ -176,7 +186,7 @@ const Posts = () => {
 
                 {!search && <div style={{ padding: 20 }}>
                     <ImageList sx={{ width: "100%", height: "100%" }} cols={3} rowHeight={190} >
-                        {data.slice(0, 54).map((item, i) => (
+                        {storeDataSaved?.data?.data?.map((item, i) => (
 
                             <ImageListItem key={item.id}>
                                 <img
