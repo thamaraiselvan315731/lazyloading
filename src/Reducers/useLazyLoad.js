@@ -1,8 +1,8 @@
 import { useEffect, useReducer, useCallback } from "react";
 import debounce from "lodash/debounce";
 
-const INTERSECTION_THRESHOLD = 5;
-const LOAD_DELAY_MS = 500;
+const INTERSECTION_THRESHOLD = 1;
+const LOAD_DELAY_MS = 50;
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -13,12 +13,24 @@ const reducer = (state, action) => {
             };
         }
         case "onGrabData": {
-            return {
-                ...state,
-                loading: false,
-                data: [...state.data, ...action.payload.data],
-                currentPage: state.currentPage + 1
-            };
+            if (action.payload.data) {
+                return {
+                    ...state,
+                    loading: false,
+                    data: [...state.data, ...action.payload.data],
+                    currentPage: state.currentPage + 1
+                };
+            }
+            else {
+                return {
+                    ...state,
+                    loading: false,
+
+                    currentPage: 4
+                };
+
+            }
+
         }
         default:
             return state;
@@ -43,9 +55,12 @@ const useLazyLoad = ({ triggerRef, onGrabData, options }) => {
         ) {
             dispatch({ type: "set", payload: { loading: true } });
             const data = await onGrabData(state.currentPage);
+
             dispatch({ type: "onGrabData", payload: { data } });
         }
+
     };
+
     const handleEntry = debounce(_handleEntry, LOAD_DELAY_MS);
 
     const onIntersect = useCallback(

@@ -8,16 +8,13 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-
-
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-//import { useParams } from 'react-router-dom';
 
 
 export default function CardLoader() {
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ minWidth: 345 }}>
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -30,7 +27,7 @@ export default function CardLoader() {
                     </IconButton>
                 }
                 title=""
-            // subheader="September 14, 2016"
+
             />
             <CardMedia
                 component="img"
