@@ -16,6 +16,15 @@ In the project directory, you can run:
 ### Please click the Search icon for Search the Item. 
 ### On loading the page will render and please scroll down to load the more data.
 
+## In mock Up image , Redline the Space between each row gap and col gap is too long for the Mobile Responsive. I given an common space between them. If you want to hot code the same image style which are mentioned in mockup guide, it will be not much expected. i tried and altered for mobile responsiveness. 
+
+### I used redux store and custom hook for image loading while user scroll down to the end of the list. 
+### I mention loading..., no more data at end for user interaction.
+
+### for redux state search, I used to filter with the coressponding substring(compare by lowercase) will be included on the every item data.
+
+### and font size is mentioned as 36 , its too big size for mobile responsive. so i alter it accordingly. 
+
 
 
 
