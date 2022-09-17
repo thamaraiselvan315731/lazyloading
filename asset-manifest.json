@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lazyloading/static/css/main.fa54a4a0.css",
+    "main.js": "/lazyloading/static/js/main.0a3c8f6c.js",
+    "static/js/787.9d3d9468.chunk.js": "/lazyloading/static/js/787.9d3d9468.chunk.js",
+    "index.html": "/lazyloading/index.html",
+    "main.fa54a4a0.css.map": "/lazyloading/static/css/main.fa54a4a0.css.map",
+    "main.0a3c8f6c.js.map": "/lazyloading/static/js/main.0a3c8f6c.js.map",
+    "787.9d3d9468.chunk.js.map": "/lazyloading/static/js/787.9d3d9468.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa54a4a0.css",
+    "static/js/main.0a3c8f6c.js"
+  ]
+}
