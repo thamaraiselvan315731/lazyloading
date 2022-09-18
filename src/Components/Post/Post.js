@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 // this is for number of data load at a time and pages 
-const NUM_PER_PAGE = 18;
+const NUM_PER_PAGE = 20;
 const TOTAL_PAGES = 4;
 let dataFullData = [];
 // dummy thing to load the data from json file
