@@ -2,12 +2,18 @@
 import './App.css';
 // eslint-disable-next-line
 import React, { lazy, Suspense } from 'react';
-import Posts from "./Components/Post/Post";
+
+const Posts = lazy(() => import('./Components/Post/Post'));
+
+const renderLoader = () => <p>Loading...</p>;
+
 
 function App() {
   return (<>
     <div style={{ backgroundColor: 'black' }}>
-      <Posts />
+      <Suspense fallback={renderLoader()}>
+        <Posts />
+      </Suspense>
     </div>
   </>);
 }

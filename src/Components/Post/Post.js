@@ -84,7 +84,6 @@ const Posts = () => {
     const [height, setHeight] = React.useState(window.innerHeight);
     const moviesSearch = useSelector((state) => state.searchlist);
     const storeDataSaved = useSelector((state) => state);
-    console.log("Redux====>" + JSON.stringify(storeDataSaved))
     const [value, setValue] = React.useState()
     const [search, setSearch] = React.useState(false)
     const classes = useStyles();
