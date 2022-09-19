@@ -9,12 +9,12 @@ const renderLoader = () => <p>Loading...</p>;
 
 
 function App() {
-  return (<>
+  return (
     <div style={{ backgroundColor: 'black' }}>
       <Suspense fallback={renderLoader()}>
         <Posts />
       </Suspense>
     </div>
-  </>);
+  );
 }
 export default App;

@@ -195,7 +195,7 @@ const Posts = () => {
                             <ImageListItem key={item.id}>
                                 <img
                                     style={{ width: width / 3 - 20, height: 120, objectFit: "fill" }}
-
+                                    //src={'../../images/poster1.jpg'}
                                     src={item.posterimage}
 
                                     alt={item.name}
