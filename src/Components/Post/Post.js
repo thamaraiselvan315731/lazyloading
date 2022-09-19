@@ -165,8 +165,8 @@ const Posts = () => {
     return (
         <>
             <div style={{ backgroundColor: 'black', minHeight: 900 }}>
-                <div>
-                    <Paper component="form" className={classes.root} style={{ width: width - (width / 5) }}>
+                <div style={{ width: width - 20, textAlign: "center" }}>
+                    <Paper component="form" className={classes.root} >
 
                         <InputBase
                             classes={{ root: classes.root, focused: classes.focused }}
@@ -194,7 +194,7 @@ const Posts = () => {
 
                             <ImageListItem key={item.id}>
                                 <img
-                                    style={{ width: width / 3 - 20, height: 120, objectFit: "fill" }}
+                                    style={{ width: 100, height: 120, objectFit: "fill" }}
                                     //src={'../../images/poster1.jpg'}
                                     src={item.posterimage}
 
@@ -220,7 +220,7 @@ const Posts = () => {
 
                                     <ImageListItem key={item.id}>
                                         <img
-                                            style={{ width: width / 3 - 20, height: 120, objectFit: "fill" }}
+                                            style={{ width: 100, height: 120, objectFit: "fill" }}
 
                                             src={item.posterimage}
                                             alt={item.name}
